@@ -1,0 +1,11 @@
+The list of the Summer Projects :
+Face recognition application by shape descriptors.
+Indexing an image base by a family of contour-based invariant descriptors.
+Realization of a dedicated platform Deep Learning.
+Game Power 4.
+Tetris game.
+Snake 3D game.
+Design and development of a 3D game of type FPS.
+
+
+

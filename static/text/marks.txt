@@ -1,0 +1,10 @@
+Your marks for the second semester are : 
+Database Management System : 17/20.
+Computer Networks : 13/20.
+Software Engineering 2 : 14/20.
+Operational research : 15/20.
+English : 18/20.
+Communication : 16/20.
+Introduction to Embedded Systems : 14/20.
+Real time operating systems : 13/20.
+Distributed systems and applications : 12/20.

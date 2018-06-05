@@ -1,0 +1,14 @@
+The list of the End of Studies Projects :
+
+Automobile monitoring system.
+Presence Management System.
+Data quality and profiling Framework.
+Online store management application.
+
+Smart home.
+Smart School Assistant.
+
+Conception and realization of a robot assistant teacher at ENSI.
+Development of a web-mobile application for the management of the trustee of a condominium.
+Strategic Analysis and Marketing.
+

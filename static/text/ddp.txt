@@ -1,0 +1,12 @@
+The list of the Design and Development Projects :
+Online store management application.
+Conception and realization of a robot assistant teacher at ENSI.
+Development of a web-mobile application for the management of the trustee of a condominium.
+Strategic Analysis and Marketing.
+Smart home.
+Smart School Assistant.
+Automobile monitoring system.
+Presence Management System.
+Data quality and profiling Framework.
+
+
