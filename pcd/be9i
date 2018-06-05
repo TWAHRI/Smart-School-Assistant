@@ -1,0 +1,78 @@
+
+data = __init__.data
+association_reu_prof = Table('association_reu_prof', data.Base.metadata,
+                             Column('person_id', Integer, ForeignKey('professor.person_id', onupdate="CASCADE", ondelete="CASCADE")),
+                             Column('reunion_id', Integer, ForeignKey('reunion.reunion_id', onupdate="CASCADE", ondelete="CASCADE"))
+                             )
+
+association_class_prof = Table('association_class_prof', data.Base.metadata,
+                               Column('person_id', Integer, ForeignKey('professor.person_id', onupdate="CASCADE", ondelete="CASCADE")),
+                               Column('class_id', Integer, ForeignKey('class.class_id', onupdate="CASCADE", ondelete="CASCADE"))
+                               )
+
+
+class Person (data.Base):
+    __tablename__ = 'person'
+
+    person_id = Column(Integer, primary_key=True)
+    name = Column(String(50), nullable=False)
+    CIN = Column(Integer)
+    num_tel = Column(Integer)
+    photo_folder_path = Column(String(200))
+
+
+class Professor(Person):
+    __tablename__ = 'professor'
+
+    emploi_path = Column(String(200))
+    reunions = relationship(
+        "Reunion",
+        secondary=association_reu_prof,
+        backref=backref("professors"))
+    classes = relationship(
+        "Class",
+        secondary=association_class_prof,
+        backref=backref("professors"))
+
+    def __repr__(self):
+        return "<professor(name='%s', CIN='%d', num_tel='%s', photo_folder_path='%s', emploi_path='%s')>" % (
+            self.name, self.CIN, self.num_tel, self.photo_folder_path, self.emploi_path)
+
+
+class Event(data.Base):
+    __tablename__ = 'event'
+
+    event_id = Column(Integer, primary_key=True)
+    name = Column(String(50), nullable=False)
+    date = Column(Date)
+
+    def __repr__(self):
+        return"<event(name='%s')>" % (self.name)
+
+
+class Reunion(data.Base):
+    __tablename__ = 'reunion'
+
+    reunion_id = Column(Integer, primary_key=True)
+    name = Column(String(50), nullable=False)
+    date = Column(Date)
+
+    def __repr__(self):
+        return"<reunion(name='%s')>" % (self.name)
+
+
+class Student(Person):
+    __tablename__ = 'student'
+
+    class_id = Column(Integer, ForeignKey('class.class_id', onupdate="CASCADE", ondelete="CASCADE"))
+    _class = relationship("Class", back_populates="students")
+
+
+class Class(data.Base):
+    __tablename__ = 'class'
+
+    class_id = Column(Integer, primary_key=True)
+    name = Column(String(20), nullable=False)
+    emploi_path = Column(String(200))
+    students = relationship("Student", back_populates="_class")
+    """
