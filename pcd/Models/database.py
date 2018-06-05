@@ -1,9 +1,8 @@
-import requests
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
 
-Engine = create_engine('sqlite:////tmp/test.db')
+Engine = create_engine('sqlite:///:memory:')
 
 
 class Database:
