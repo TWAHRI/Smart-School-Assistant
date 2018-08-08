@@ -1,3 +1,2 @@
 # Smart-School-Assistant
-Design and Development Project.
-Smart School assistant to offer school services based on jasper module.
+Design and Development of a Smart School assistant to offer school services based on jasper module.
